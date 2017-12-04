@@ -65,7 +65,8 @@ namespace punyreferences
                 _folderPath = RootFolderBrowserDialog.SelectedPath;
                 InputRootFolderTextBox.Text = _folderPath;
                 dllParser.ParseFiles(_folderPath);
-                foreach (string value in dllParser.DllList)
+                dllParser.BeautifyList();
+                foreach (string value in dllParser.BeautifiedList)
                 {
                     ChangedReferencesListView.Items.Add(value);
                 }

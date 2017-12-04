@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace punyreferences
 {
@@ -16,9 +17,11 @@ namespace punyreferences
 
         public void BeautifyList()
         {
-            foreach (var file in _dllList)
+            Regex regex = new Regex(@"[^\\]+\.dll");
+            foreach (string file in _dllList)
             {
-                
+                string result = regex.Match(file).Value;
+                BeautifiedList.Add(result);
             }
         }
 
