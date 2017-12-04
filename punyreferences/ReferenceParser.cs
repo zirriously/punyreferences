@@ -35,12 +35,11 @@ namespace punyreferences
 
         public void BeautifyList()
         {
-            Regex regex = new Regex(@".*\\(?<filename>[^\\]+\.dll)");
+            Regex regex = new Regex(@"[^\\]+\.dll");
             foreach (string reference in _references)
             {
                 string result = regex.Match(reference).Value;
-                Console.WriteLine(result);
-
+                _beautifiedReferences.Add(result);
             }
         }
 

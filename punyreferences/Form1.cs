@@ -37,11 +37,11 @@ namespace punyreferences
             {
                 referenceParser.ParseReferences(CsProjFileDialog.FileName);
                 InputCsProjTextBox.Text = CsProjFileDialog.FileName;
-                foreach (string value in referenceParser.ReferenceList)
+                referenceParser.BeautifyList();
+                foreach (string value in referenceParser.BeautifiedList)
                 {
                     FoundReferencesListView.Items.Add(value);
                 }
-                referenceParser.BeautifyList();
             }
             else
             {
