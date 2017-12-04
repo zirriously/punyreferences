@@ -28,69 +28,118 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.InputCsProjTextBox = new System.Windows.Forms.TextBox();
+            this.InputCsProjButton = new System.Windows.Forms.Button();
+            this.InputRootFolderButton = new System.Windows.Forms.Button();
+            this.InputRootFolderTextBox = new System.Windows.Forms.TextBox();
+            this.FoundReferencesListView = new System.Windows.Forms.ListView();
+            this.ChangedReferencesListView = new System.Windows.Forms.ListView();
+            this.PreviewChangesButton = new System.Windows.Forms.Button();
+            this.CsProjFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.RootFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
-            // textBox1
+            // InputCsProjTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(330, 20);
-            this.textBox1.TabIndex = 0;
+            this.InputCsProjTextBox.Location = new System.Drawing.Point(12, 12);
+            this.InputCsProjTextBox.Name = "InputCsProjTextBox";
+            this.InputCsProjTextBox.ReadOnly = true;
+            this.InputCsProjTextBox.Size = new System.Drawing.Size(330, 20);
+            this.InputCsProjTextBox.TabIndex = 0;
+            this.InputCsProjTextBox.Text = "Choose the .csproj file";
             // 
-            // button1
+            // InputCsProjButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(342, 9);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(27, 22);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "...";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.InputCsProjButton.BackColor = System.Drawing.Color.Transparent;
+            this.InputCsProjButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.InputCsProjButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.InputCsProjButton.FlatAppearance.BorderSize = 0;
+            this.InputCsProjButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InputCsProjButton.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputCsProjButton.Location = new System.Drawing.Point(342, 9);
+            this.InputCsProjButton.Margin = new System.Windows.Forms.Padding(0);
+            this.InputCsProjButton.Name = "InputCsProjButton";
+            this.InputCsProjButton.Size = new System.Drawing.Size(27, 22);
+            this.InputCsProjButton.TabIndex = 1;
+            this.InputCsProjButton.Text = "...";
+            this.InputCsProjButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.InputCsProjButton.UseVisualStyleBackColor = false;
+            this.InputCsProjButton.Click += new System.EventHandler(this.InputCsProjButton_Click);
             // 
-            // button2
+            // InputRootFolderButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(342, 48);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(27, 22);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "...";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            this.InputRootFolderButton.BackColor = System.Drawing.Color.Transparent;
+            this.InputRootFolderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.InputRootFolderButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.InputRootFolderButton.FlatAppearance.BorderSize = 0;
+            this.InputRootFolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.InputRootFolderButton.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InputRootFolderButton.Location = new System.Drawing.Point(342, 48);
+            this.InputRootFolderButton.Margin = new System.Windows.Forms.Padding(0);
+            this.InputRootFolderButton.Name = "InputRootFolderButton";
+            this.InputRootFolderButton.Size = new System.Drawing.Size(27, 22);
+            this.InputRootFolderButton.TabIndex = 3;
+            this.InputRootFolderButton.Text = "...";
+            this.InputRootFolderButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.InputRootFolderButton.UseVisualStyleBackColor = false;
+            this.InputRootFolderButton.Click += new System.EventHandler(this.InputRootFolderButton_Click);
             // 
-            // textBox2
+            // InputRootFolderTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(12, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(330, 20);
-            this.textBox2.TabIndex = 2;
+            this.InputRootFolderTextBox.Location = new System.Drawing.Point(12, 50);
+            this.InputRootFolderTextBox.Name = "InputRootFolderTextBox";
+            this.InputRootFolderTextBox.ReadOnly = true;
+            this.InputRootFolderTextBox.Size = new System.Drawing.Size(330, 20);
+            this.InputRootFolderTextBox.TabIndex = 2;
+            this.InputRootFolderTextBox.Text = "Choose the root folder containing compiled .dll\'s";
+            // 
+            // FoundReferencesListView
+            // 
+            this.FoundReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.FoundReferencesListView.Location = new System.Drawing.Point(12, 87);
+            this.FoundReferencesListView.Name = "FoundReferencesListView";
+            this.FoundReferencesListView.Size = new System.Drawing.Size(150, 328);
+            this.FoundReferencesListView.TabIndex = 4;
+            this.FoundReferencesListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // ChangedReferencesListView
+            // 
+            this.ChangedReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ChangedReferencesListView.Location = new System.Drawing.Point(219, 87);
+            this.ChangedReferencesListView.Name = "ChangedReferencesListView";
+            this.ChangedReferencesListView.Size = new System.Drawing.Size(150, 328);
+            this.ChangedReferencesListView.TabIndex = 4;
+            this.ChangedReferencesListView.UseCompatibleStateImageBehavior = false;
+            // 
+            // PreviewChangesButton
+            // 
+            this.PreviewChangesButton.Location = new System.Drawing.Point(168, 222);
+            this.PreviewChangesButton.Name = "PreviewChangesButton";
+            this.PreviewChangesButton.Size = new System.Drawing.Size(45, 23);
+            this.PreviewChangesButton.TabIndex = 5;
+            this.PreviewChangesButton.Text = "->";
+            this.PreviewChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // CsProjFileDialog
+            // 
+            this.CsProjFileDialog.FileName = ".csproj file";
+            // 
+            // RootFolderBrowserDialog
+            // 
+            this.RootFolderBrowserDialog.SelectedPath = "Root folder";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 427);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(381, 473);
+            this.Controls.Add(this.PreviewChangesButton);
+            this.Controls.Add(this.ChangedReferencesListView);
+            this.Controls.Add(this.FoundReferencesListView);
+            this.Controls.Add(this.InputRootFolderButton);
+            this.Controls.Add(this.InputRootFolderTextBox);
+            this.Controls.Add(this.InputCsProjButton);
+            this.Controls.Add(this.InputCsProjTextBox);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -101,10 +150,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox InputCsProjTextBox;
+        private System.Windows.Forms.Button InputCsProjButton;
+        private System.Windows.Forms.Button InputRootFolderButton;
+        private System.Windows.Forms.TextBox InputRootFolderTextBox;
+        private System.Windows.Forms.ListView FoundReferencesListView;
+        private System.Windows.Forms.ListView ChangedReferencesListView;
+        private System.Windows.Forms.Button PreviewChangesButton;
+        private System.Windows.Forms.OpenFileDialog CsProjFileDialog;
+        private System.Windows.Forms.FolderBrowserDialog RootFolderBrowserDialog;
     }
 }
 
