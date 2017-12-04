@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.InputCsProjTextBox = new System.Windows.Forms.TextBox();
             this.InputCsProjButton = new System.Windows.Forms.Button();
             this.InputRootFolderButton = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.CsProjFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.RootFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.SaveChangesButton = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // InputCsProjTextBox
@@ -102,7 +104,7 @@
             this.FoundReferencesListView.Location = new System.Drawing.Point(12, 87);
             this.FoundReferencesListView.MultiSelect = false;
             this.FoundReferencesListView.Name = "FoundReferencesListView";
-            this.FoundReferencesListView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.FoundReferencesListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FoundReferencesListView.Size = new System.Drawing.Size(300, 328);
             this.FoundReferencesListView.TabIndex = 4;
             this.FoundReferencesListView.UseCompatibleStateImageBehavior = false;
@@ -110,12 +112,16 @@
             // 
             // ChangedReferencesListView
             // 
-            this.ChangedReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.ChangedReferencesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.ChangedReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.ChangedReferencesListView.Location = new System.Drawing.Point(351, 87);
+            this.ChangedReferencesListView.MultiSelect = false;
             this.ChangedReferencesListView.Name = "ChangedReferencesListView";
+            this.ChangedReferencesListView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ChangedReferencesListView.Size = new System.Drawing.Size(300, 328);
             this.ChangedReferencesListView.TabIndex = 4;
             this.ChangedReferencesListView.UseCompatibleStateImageBehavior = false;
+            this.ChangedReferencesListView.View = System.Windows.Forms.View.Details;
             // 
             // PreviewChangesButton
             // 
@@ -142,6 +148,11 @@
             this.SaveChangesButton.TabIndex = 6;
             this.SaveChangesButton.Text = "Save changes";
             this.SaveChangesButton.UseVisualStyleBackColor = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Form1
             // 
@@ -176,6 +187,7 @@
         private System.Windows.Forms.OpenFileDialog CsProjFileDialog;
         private System.Windows.Forms.FolderBrowserDialog RootFolderBrowserDialog;
         private System.Windows.Forms.Button SaveChangesButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

@@ -26,6 +26,11 @@ namespace punyreferences
             header1.Name = "column1";
             FoundReferencesListView.Columns.Add(header1);
             FoundReferencesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+            ColumnHeader header2 = new ColumnHeader();
+            header2.Text = String.Empty;
+            header2.Name = "column2";
+            ChangedReferencesListView.Columns.Add(header2);
+            ChangedReferencesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void InputCsProjButton_Click(object sender, EventArgs e)
@@ -56,8 +61,14 @@ namespace punyreferences
             RootFolderBrowserDialog.ShowDialog();
             if (Directory.Exists(RootFolderBrowserDialog.SelectedPath))
             {
+                DLLParser dllParser = new DLLParser();
                 _folderPath = RootFolderBrowserDialog.SelectedPath;
                 InputRootFolderTextBox.Text = _folderPath;
+                dllParser.ParseFiles(_folderPath);
+                foreach (string value in dllParser.DllList)
+                {
+                    ChangedReferencesListView.Items.Add(value);
+                }
             }
             else
             {
