@@ -45,7 +45,7 @@
             this.InputCsProjTextBox.Location = new System.Drawing.Point(12, 12);
             this.InputCsProjTextBox.Name = "InputCsProjTextBox";
             this.InputCsProjTextBox.ReadOnly = true;
-            this.InputCsProjTextBox.Size = new System.Drawing.Size(330, 20);
+            this.InputCsProjTextBox.Size = new System.Drawing.Size(479, 20);
             this.InputCsProjTextBox.TabIndex = 0;
             this.InputCsProjTextBox.Text = "Choose the .csproj file";
             // 
@@ -57,7 +57,7 @@
             this.InputCsProjButton.FlatAppearance.BorderSize = 0;
             this.InputCsProjButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InputCsProjButton.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputCsProjButton.Location = new System.Drawing.Point(342, 9);
+            this.InputCsProjButton.Location = new System.Drawing.Point(491, 9);
             this.InputCsProjButton.Margin = new System.Windows.Forms.Padding(0);
             this.InputCsProjButton.Name = "InputCsProjButton";
             this.InputCsProjButton.Size = new System.Drawing.Size(27, 22);
@@ -75,7 +75,7 @@
             this.InputRootFolderButton.FlatAppearance.BorderSize = 0;
             this.InputRootFolderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InputRootFolderButton.Font = new System.Drawing.Font("Arial Narrow", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.InputRootFolderButton.Location = new System.Drawing.Point(342, 48);
+            this.InputRootFolderButton.Location = new System.Drawing.Point(491, 48);
             this.InputRootFolderButton.Margin = new System.Windows.Forms.Padding(0);
             this.InputRootFolderButton.Name = "InputRootFolderButton";
             this.InputRootFolderButton.Size = new System.Drawing.Size(27, 22);
@@ -90,33 +90,38 @@
             this.InputRootFolderTextBox.Location = new System.Drawing.Point(12, 50);
             this.InputRootFolderTextBox.Name = "InputRootFolderTextBox";
             this.InputRootFolderTextBox.ReadOnly = true;
-            this.InputRootFolderTextBox.Size = new System.Drawing.Size(330, 20);
+            this.InputRootFolderTextBox.Size = new System.Drawing.Size(479, 20);
             this.InputRootFolderTextBox.TabIndex = 2;
             this.InputRootFolderTextBox.Text = "Choose the root folder containing compiled .dll\'s";
             // 
             // FoundReferencesListView
             // 
-            this.FoundReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.FoundReferencesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.FoundReferencesListView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.FoundReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.FoundReferencesListView.Location = new System.Drawing.Point(12, 87);
+            this.FoundReferencesListView.MultiSelect = false;
             this.FoundReferencesListView.Name = "FoundReferencesListView";
-            this.FoundReferencesListView.Size = new System.Drawing.Size(150, 328);
+            this.FoundReferencesListView.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.FoundReferencesListView.Size = new System.Drawing.Size(300, 328);
             this.FoundReferencesListView.TabIndex = 4;
             this.FoundReferencesListView.UseCompatibleStateImageBehavior = false;
+            this.FoundReferencesListView.View = System.Windows.Forms.View.Details;
             // 
             // ChangedReferencesListView
             // 
             this.ChangedReferencesListView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.ChangedReferencesListView.Location = new System.Drawing.Point(219, 87);
+            this.ChangedReferencesListView.Location = new System.Drawing.Point(351, 87);
             this.ChangedReferencesListView.Name = "ChangedReferencesListView";
-            this.ChangedReferencesListView.Size = new System.Drawing.Size(150, 328);
+            this.ChangedReferencesListView.Size = new System.Drawing.Size(300, 328);
             this.ChangedReferencesListView.TabIndex = 4;
             this.ChangedReferencesListView.UseCompatibleStateImageBehavior = false;
             // 
             // PreviewChangesButton
             // 
-            this.PreviewChangesButton.Location = new System.Drawing.Point(168, 222);
+            this.PreviewChangesButton.Location = new System.Drawing.Point(315, 237);
             this.PreviewChangesButton.Name = "PreviewChangesButton";
-            this.PreviewChangesButton.Size = new System.Drawing.Size(45, 23);
+            this.PreviewChangesButton.Size = new System.Drawing.Size(33, 23);
             this.PreviewChangesButton.TabIndex = 5;
             this.PreviewChangesButton.Text = "->";
             this.PreviewChangesButton.UseVisualStyleBackColor = true;
@@ -131,7 +136,7 @@
             // 
             // SaveChangesButton
             // 
-            this.SaveChangesButton.Location = new System.Drawing.Point(145, 421);
+            this.SaveChangesButton.Location = new System.Drawing.Point(279, 421);
             this.SaveChangesButton.Name = "SaveChangesButton";
             this.SaveChangesButton.Size = new System.Drawing.Size(90, 23);
             this.SaveChangesButton.TabIndex = 6;
@@ -142,7 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 448);
+            this.ClientSize = new System.Drawing.Size(654, 447);
             this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.PreviewChangesButton);
             this.Controls.Add(this.ChangedReferencesListView);

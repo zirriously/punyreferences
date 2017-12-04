@@ -18,20 +18,30 @@ namespace punyreferences
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ColumnHeader header1 = new ColumnHeader();
+            header1.Text = String.Empty;
+            header1.Name = "column1";
+            FoundReferencesListView.Columns.Add(header1);
+            FoundReferencesListView.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
 
         private void InputCsProjButton_Click(object sender, EventArgs e)
         {
             CsProjFileDialog.ShowDialog();
-            var referenceParser = new ReferenceParser();
+            ReferenceParser referenceParser = new ReferenceParser();
             CsProjFileDialog.Multiselect = false;
             if (File.Exists(CsProjFileDialog.FileName) && CsProjFileDialog.FileName.Contains(".csproj"))
             {
                 referenceParser.ParseReferences(CsProjFileDialog.FileName);
                 InputCsProjTextBox.Text = CsProjFileDialog.FileName;
+                foreach (string value in referenceParser.ReferenceList)
+                {
+                    FoundReferencesListView.Items.Add(value);
+                }
+                referenceParser.BeautifyList();
             }
             else
             {

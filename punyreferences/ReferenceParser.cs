@@ -6,19 +6,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace punyreferences
 {
     public class ReferenceParser
     {
-        private List<string> _references;
-
-        public ReferenceParser()
-        {
-            if (_references != null)
-                _references.Clear();
-        }
-
+        private List<string> _references = new List<string>();
+        private List<string> _beautifiedReferences = new List<string>();
 
         public void ParseReferences(string filePath)
         {
@@ -28,17 +23,28 @@ namespace punyreferences
                 .Element(msbuild + "Project")
                 .Elements(msbuild + "ItemGroup")
                 .Elements(msbuild + "Reference")
-                .Elements(msbuild + "HintPath")
-                //.Attributes("Include")     
+                .Elements(msbuild + "HintPath") 
                 .Select(refElem => refElem.Value);
-                _references.AddRange(references);
+            _references.AddRange(references);
 
-            foreach (var value in _references)
+            foreach (string value in _references)
             {
                 Console.WriteLine(value);
             }
         }
 
+        public void BeautifyList()
+        {
+            Regex regex = new Regex(@".*\\(?<filename>[^\\]+\.dll)");
+            foreach (string reference in _references)
+            {
+                string result = regex.Match(reference).Value;
+                Console.WriteLine(result);
+
+            }
+        }
+
+        public List<string> BeautifiedList => _beautifiedReferences;
 
         public List<string> ReferenceList => _references;
     }
