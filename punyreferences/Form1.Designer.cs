@@ -37,6 +37,7 @@
             this.PreviewChangesButton = new System.Windows.Forms.Button();
             this.CsProjFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.RootFolderBrowserDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.SaveChangesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InputCsProjTextBox
@@ -128,11 +129,21 @@
             // 
             this.RootFolderBrowserDialog.SelectedPath = "Root folder";
             // 
+            // SaveChangesButton
+            // 
+            this.SaveChangesButton.Location = new System.Drawing.Point(145, 421);
+            this.SaveChangesButton.Name = "SaveChangesButton";
+            this.SaveChangesButton.Size = new System.Drawing.Size(90, 23);
+            this.SaveChangesButton.TabIndex = 6;
+            this.SaveChangesButton.Text = "Save changes";
+            this.SaveChangesButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 473);
+            this.ClientSize = new System.Drawing.Size(381, 448);
+            this.Controls.Add(this.SaveChangesButton);
             this.Controls.Add(this.PreviewChangesButton);
             this.Controls.Add(this.ChangedReferencesListView);
             this.Controls.Add(this.FoundReferencesListView);
@@ -159,6 +170,7 @@
         private System.Windows.Forms.Button PreviewChangesButton;
         private System.Windows.Forms.OpenFileDialog CsProjFileDialog;
         private System.Windows.Forms.FolderBrowserDialog RootFolderBrowserDialog;
+        private System.Windows.Forms.Button SaveChangesButton;
     }
 }
 

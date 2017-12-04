@@ -39,10 +39,20 @@ namespace punyreferences
             }
         }
 
+        private string _folderPath;
+
         private void InputRootFolderButton_Click(object sender, EventArgs e)
         {
             RootFolderBrowserDialog.ShowDialog();
-
+            if (Directory.Exists(RootFolderBrowserDialog.SelectedPath))
+            {
+                _folderPath = RootFolderBrowserDialog.SelectedPath;
+                InputRootFolderTextBox.Text = _folderPath;
+            }
+            else
+            {
+                MessageBox.Show("Error - You did not pick a folder");
+            }
         }
     }
 }
