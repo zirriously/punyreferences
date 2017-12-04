@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -23,6 +24,7 @@ namespace punyreferences
                 string result = regex.Match(file).Value;
                 BeautifiedList.Add(result);
             }
+            Console.WriteLine(_beautifiedList.Count);
         }
 
         public List<string> DllList => _dllList;
